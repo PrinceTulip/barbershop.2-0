@@ -46,6 +46,8 @@ var config = {
 
 function SpritePng() {
   const spriteData =  gulp.src(paths.src + '/images/*.png').pipe(spritesmith({
+    "x": 10,
+    "y": 15,
     imgName: 'sprite.png',
     cssName: 'sprite.css'
   }));
@@ -120,8 +122,8 @@ function htmls() {
       .pipe(gulp.dest(paths.build));
 }
 function img() {
-  return gulp.src(paths.src + 'img/*')
-      .pipe(gulp.dest(paths.build + 'img'));
+  return gulp.src(paths.src + 'images/*.*')
+      .pipe(gulp.dest(paths.build + 'images'));
 }
 function fonts() {
   return gulp.src(paths.src + 'fonts/**/*')
